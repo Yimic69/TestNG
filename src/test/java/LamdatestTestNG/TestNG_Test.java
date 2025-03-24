@@ -23,9 +23,9 @@ public class TestNG_Test {
 
 	private WebDriver driver;
 	private String browserName;
-	    private String browserVersion;
-	    private String Platform;
-	    private String url;
+	private String browserVersion;
+	private String Platform;
+	private String url;
 	@Parameters({"browser", "browserVersion", "platform", "url"})
     @BeforeMethod
     public void setUp(String browser, String browserVer, String platform, String url) throws MalformedURLException {
@@ -84,7 +84,6 @@ public class TestNG_Test {
     @Test(priority = 3)
     public void testJavascriptAlert() {
         driver.findElement(By.linkText("Javascript Alerts")).click();
-       
         driver.findElement(By.xpath("//button[text()='Click Me']")).click();
         Alert alert = driver.switchTo().alert();
         String alertText = alert.getText();
